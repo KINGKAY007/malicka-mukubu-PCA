@@ -116,7 +116,7 @@ nav a {
   max-height: 500px;
 }
 
-/* 🔥 NOUVELLE SECTION PROJETS */
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -146,14 +146,36 @@ nav a {
   border-color: #c8a96a;
 }
 
-/* FORM */
-form input, form textarea, form select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+/* 🔥 AJOUT CSS POUR FORMULAIRE */
+.contact-form {
+  max-width: 800px;
+  margin: auto;
+}
+
+.form-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  flex: 1;
+  padding: 12px;
   background: #111;
   border: 1px solid #333;
   color: #fff;
+}
+
+.contact-form textarea {
+  width: 100%;
+}
+
+@media(max-width: 768px){
+  .form-group {
+    flex-direction: column;
+  }
 }
 
 /* FOOTER */
@@ -164,7 +186,6 @@ footer {
 
 /* DESKTOP */
 @media(min-width: 768px){
-
   section {
     padding: 100px 10%;
   }
@@ -220,10 +241,8 @@ footer {
   <div id="bio" class="bio-hidden">
     <p>Forte d’une expérience diversifiée, elle occupe aujourd’hui des fonctions stratégiques qui lui permettent d’agir concrètement sur les dynamiques de développement du pays. En tant que Présidente du Conseil d’Administration de l’Office National du Tourisme, elle participe activement à la structuration et à la promotion du secteur touristique.<br>
 
-Parallèlement, elle dirige le Collectif Vision Congo, une organisation engagée dans la transformation sociale et l’accompagnement des initiatives locales.</p>
-    <p>Vision<br>
-
-Convaincue que le Congo regorge d’opportunités, Malicka Mukubu œuvre pour un modèle de développement inclusif, fondé sur la valorisation des ressources locales, le renforcement des capacités et l’émergence d’une nouvelle génération de leaders.</p>
+Parallèlement, elle dirige le Collectif Vision Congo, une organisation engagée dans la transformation sociale et l’accompagnement des initiatives locales..</p>
+    <p>Vision..<br>Convaincue que le Congo regorge d’opportunités, Malicka Mukubu œuvre pour un modèle de développement inclusif, fondé sur la valorisation des ressources locales, le renforcement des capacités et l’émergence d’une nouvelle génération de leaders.</p>
   </div>
 </section>
 
@@ -232,34 +251,65 @@ Convaincue que le Congo regorge d’opportunités, Malicka Mukubu œuvre pour un
   <h2 class="section-title">Initiatives</h2>
 
   <div class="projects-grid">
-
     <div class="project-card">
       <h3>Vision Congo</h3>
-      <p>Le Collectif Vision Congo est une plateforme d’engagement citoyen dédiée à la promotion du développement social, économique et humain en République Démocratique du Congo. À travers ses actions, l’organisation accompagne les communautés et valorise les initiatives locales.</p>
+      <p>Le Collectif Vision Congo est une plateforme d’engagement citoyen...</p>
     </div>
 
     <div class="project-card">
       <h3>Tourisme</h3>
-      <p>À travers son rôle au sein de l’Office National du Tourisme, Malicka Mukubu œuvre à repositionner le tourisme comme un levier stratégique de croissance. Son objectif est de promouvoir l’image du Congo et d’attirer de nouvelles opportunités économiques.</p>
+      <p>À travers son rôle au sein de l’Office National du Tourisme...</p>
     </div>
 
     <div class="project-card">
       <h3>Leadership féminin</h3>
-      <p>Elle est également impliquée dans diverses initiatives visant à renforcer le leadership féminin, soutenir la jeunesse et encourager l’innovation.</p>
+      <p>Elle est également impliquée dans diverses initiatives...</p>
     </div>
-
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- 🔥 CONTACT MODIFIÉ UNIQUEMENT -->
 <section id="contact">
-  <h2>Contact</h2>
+  <h2>Prendre un rendez-vous</h2>
 
-  <form>
-    <input type="text" placeholder="Nom">
-    <input type="email" placeholder="Email">
-    <textarea placeholder="Message"></textarea>
-    <button class="btn">Envoyer</button>
+  <p style="text-align:center; margin-bottom:20px;">
+    Merci de remplir ce formulaire avec précision afin de faciliter le traitement de votre demande.
+  </p>
+
+  <form class="contact-form">
+
+    <div class="form-group">
+      <input type="text" placeholder="Nom complet" required>
+      <input type="email" placeholder="Adresse email" required>
+      <input type="tel" placeholder="Numéro de téléphone" required>
+    </div>
+
+    <div class="form-group">
+      <select required>
+        <option value="">Votre profil</option>
+        <option>Entrepreneur</option>
+        <option>Étudiant</option>
+        <option>Employé</option>
+        <option>Organisation</option>
+      </select>
+
+      <select required>
+        <option value="">Motif du rendez-vous</option>
+        <option>Interview</option>
+        <option>Présentation de projet</option>
+        <option>Invitation</option>
+        <option>Partenariat</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <textarea rows="4" placeholder="Expliquez votre demande et l’objectif du rendez-vous" required></textarea>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="btn">Envoyer la demande</button>
+    </div>
+
   </form>
 </section>
 
@@ -268,11 +318,8 @@ Convaincue que le Congo regorge d’opportunités, Malicka Mukubu œuvre pour un
 </footer>
 
 <script>
-
-/* BOUTON BIO */
 document.getElementById("bio-btn").addEventListener("click", function() {
   const bio = document.getElementById("bio");
-
   bio.classList.toggle("open");
 
   if (bio.classList.contains("open")) {
@@ -281,7 +328,6 @@ document.getElementById("bio-btn").addEventListener("click", function() {
     this.innerText = "En savoir plus";
   }
 });
-
 </script>
 
 </body>
