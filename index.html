@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malicka Mukubu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  background: #0c0c0c;
+  color: #f5f5f5;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+}
+
+/* NAV */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  background: url('hero.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #c8a96a;
+  color: #c8a96a;
+  text-decoration: none;
+  margin: 5px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #c8a96a;
+  color: #000;
+}
+
+/* IMAGE */
+.image-block {
+  height: 250px;
+  background: url('image1.jpg') center/cover no-repeat;
+  margin-bottom: 20px;
+}
+
+/* BIO */
+.bio-hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.bio-hidden.open {
+  max-height: 500px;
+}
+
+/* 🔥 NOUVELLE SECTION PROJETS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  padding: 25px;
+  border: 1px solid #333;
+  background: #111;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.project-card h3 {
+  color: #c8a96a;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: #c8a96a;
+}
+
+/* FORM */
+form input, form textarea, form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* DESKTOP */
+@media(min-width: 768px){
+
+  section {
+    padding: 100px 10%;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image-block {
+    height: 400px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h3>Malicka Mukubu</h3>
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#projects">Initiatives</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Construire une nouvelle image du Congo</h1>
+    <p>Tourisme • Leadership • Impact social</p>
+
+    <a href="#contact" class="btn">Demander un rendez-vous</a>
+    <a href="#about" class="btn">Découvrir</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>À propos</h2>
+
+  <div class="image-block"></div>
+
+  <p>Malicka Mukubu est une figure engagée du développement en République Démocratique du Congo. À la croisée du leadership institutionnel et de l’action sociale, elle consacre son parcours à la promotion du tourisme, à l’autonomisation des femmes et à la valorisation du potentiel congolai</p>
+
+  <button id="bio-btn" class="btn">En savoir plus</button>
+
+  <div id="bio" class="bio-hidden">
+    <p>Forte d’une expérience diversifiée, elle occupe aujourd’hui des fonctions stratégiques qui lui permettent d’agir concrètement sur les dynamiques de développement du pays. En tant que Présidente du Conseil d’Administration de l’Office National du Tourisme, elle participe activement à la structuration et à la promotion du secteur touristique.<br>
+
+Parallèlement, elle dirige le Collectif Vision Congo, une organisation engagée dans la transformation sociale et l’accompagnement des initiatives locales.</p>
+    <p>Vision<br>
+
+Convaincue que le Congo regorge d’opportunités, Malicka Mukubu œuvre pour un modèle de développement inclusif, fondé sur la valorisation des ressources locales, le renforcement des capacités et l’émergence d’une nouvelle génération de leaders.</p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Initiatives</h2>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Vision Congo</h3>
+      <p>Le Collectif Vision Congo est une plateforme d’engagement citoyen dédiée à la promotion du développement social, économique et humain en République Démocratique du Congo. À travers ses actions, l’organisation accompagne les communautés et valorise les initiatives locales.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Tourisme</h3>
+      <p>À travers son rôle au sein de l’Office National du Tourisme, Malicka Mukubu œuvre à repositionner le tourisme comme un levier stratégique de croissance. Son objectif est de promouvoir l’image du Congo et d’attirer de nouvelles opportunités économiques.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Leadership féminin</h3>
+      <p>Elle est également impliquée dans diverses initiatives visant à renforcer le leadership féminin, soutenir la jeunesse et encourager l’innovation.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+
+  <form>
+    <input type="text" placeholder="Nom">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+    <button class="btn">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Malicka Mukubu
+</footer>
+
+<script>
+
+/* BOUTON BIO */
+document.getElementById("bio-btn").addEventListener("click", function() {
+  const bio = document.getElementById("bio");
+
+  bio.classList.toggle("open");
+
+  if (bio.classList.contains("open")) {
+    this.innerText = "Réduire";
+  } else {
+    this.innerText = "En savoir plus";
+  }
+});
+
+</script>
+
+</body>
+</html>
