@@ -347,16 +347,16 @@ form.addEventListener("submit", function(e) {
 
   fetch("https://script.google.com/macros/s/AKfycbzEUwn59XthWk0B3ba-A5TqyYHjPYsCosdNEs0x351BOL682qoN-ct3vESVA2VIp299/exec", {
     method: "POST",
-    mode: "no-cors", //  TRÈS IMPORTANT
+    mode: "no-cors", // 🔥 OBLIGATOIRE SUR GITHUB
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(data)
-  })
-  .then(() => {
-    alert("Demande envoyée avec succès !");
-    form.reset();
-  })
-  .catch(() => {
-    alert("Erreur lors de l'envoi.");
   });
+
+  // 👉 on affiche le succès directement
+  alert("Demande envoyée avec succès !");
+  form.reset();
 });
 </script>
 
