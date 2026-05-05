@@ -276,7 +276,7 @@ Parallèlement, elle dirige le Collectif Vision Congo, une organisation engagée
     Merci de remplir ce formulaire avec précision afin de faciliter le traitement de votre demande.
   </p>
 
-  <form class="contact-form">
+  <form class="contact-form" id="form">
 
     <div class="form-group">
       <input type="text" placeholder="Nom complet" required>
@@ -327,6 +327,36 @@ document.getElementById("bio-btn").addEventListener("click", function() {
   } else {
     this.innerText = "En savoir plus";
   }
+});
+</script>
+
+<script>
+const form = document.getElementById("form");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    nom: form.querySelector("input[placeholder='Nom complet']").value,
+    email: form.querySelector("input[placeholder='Adresse email']").value,
+    telephone: form.querySelector("input[placeholder='Numéro de téléphone']").value,
+    profil: form.querySelector("select").value,
+    motif: form.querySelectorAll("select")[1].value,
+    message: form.querySelector("textarea").value
+  };
+
+  fetch("Thttps://script.google.com/macros/s/AKfycbzdAqokaE_9dtIg9C0J7_z9_Rx3O2Jqb8nk2CYv4nrEhoWs8tti79YhrkzO2jWTzbQzmg/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("Demande envoyée avec succès !");
+    form.reset();
+  })
+  .catch(err => {
+    alert("Erreur lors de l'envoi.");
+  });
 });
 </script>
 
