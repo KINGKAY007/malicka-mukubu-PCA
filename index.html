@@ -345,9 +345,9 @@ form.addEventListener("submit", function(e) {
     message: form.querySelector("textarea").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbxUz87HRsmWFiHLPspFrUy4cZGNIfrbtdhL-PzUflP45zvZEAHYUpjxNjX4D0N1oOswjA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzEUwn59XthWk0B3ba-A5TqyYHjPYsCosdNEs0x351BOL682qoN-ct3vESVA2VIp299/exec", {
     method: "POST",
-    mode: "no-cors", // 🔥 TRÈS IMPORTANT
+    mode: "no-cors", //  TRÈS IMPORTANT
     body: JSON.stringify(data)
   })
   .then(() => {
