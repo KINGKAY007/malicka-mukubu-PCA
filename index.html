@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta
@@ -505,6 +506,8 @@ Malicka Mukubu | Leadership, Tourisme et Autonomisation de la Femme en RDC
       font-size: 2rem; cursor: pointer; line-height: 1;
     }
   </style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
 </head>
 <body>
 
@@ -798,7 +801,7 @@ Malicka Mukubu | Leadership, Tourisme et Autonomisation de la Femme en RDC
 
   <div class="fg">
     <label>Numéro de téléphone</label>
-    <input type="tel" name="telephone" placeholder="+243 XX XXX XXXX" />
+    <input type="tel" id="telephone" name="telephone" />
   </div>
 
   <div class="fg">
@@ -842,7 +845,8 @@ Malicka Mukubu | Leadership, Tourisme et Autonomisation de la Femme en RDC
     const formData = {
       nom_complet:  this.nom_complet.value.trim(),
       email:        this.email.value.trim(),
-      telephone:    this.telephone.value.trim(),
+      telephone: iti.getSelectedCountryData().dialCode +
+document.querySelector("#telephone").value.replace(/\D/g, ""),
       organisation: this.organisation.value.trim(),
       objet:        this.objet.value,
       message:      this.message.value.trim()
@@ -975,6 +979,22 @@ Malicka Mukubu | Leadership, Tourisme et Autonomisation de la Femme en RDC
       this.reset();
     }, 3500);
   });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
+
+<script>
+const input = document.querySelector("#telephone");
+
+const iti = window.intlTelInput(input, {
+  initialCountry: "cd",
+  preferredCountries: ["cd","cg","ao","fr","be"],
+  separateDialCode: true,
+  nationalMode: false,
+  loadUtils: () =>
+    import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/utils.js")
+});
 </script>
 
 </body>
